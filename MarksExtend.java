@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Marks {
+public class MarksExtend {
 
     public static void main(String[] args) {
 
@@ -20,7 +20,8 @@ public class Marks {
             System.out.println("3. Average marks of a subject");
             System.out.println("4. Average marks of a student");
             System.out.println("5. Total marks of a student");
-            System.out.println("6. Exit");
+            System.out.println("6. Grades");
+            System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
 
             int choice = sc.nextInt();
@@ -134,9 +135,39 @@ public class Marks {
 
                     System.out.println("Total Marks = " + total);
                     break;
+                
+                //Grades
+                case 6:
+                    System.out.println("ID\tMath\tChemistry\tPhysics");
+                    for (int i = 0; i < n; i++) {
+                                System.out.print((i + 1) + "\t");
+
+                                for (int j = 0; j < 3; j++) {
+
+                                    int mark = marks[i][j];
+                                    String grade;
+
+                                        if (mark >= 90) {
+                                            grade = "Grade A";
+                                        } else if (mark >= 80) {
+                                            grade = "Grade B";
+                                        } else if (mark >= 70) {
+                                            grade = "Grade C";
+                                        } else if (mark >= 60) {
+                                            grade = "Grade D";
+                                        } else {
+                                            grade = "Fail";
+                                        }
+
+                                System.out.print(grade + "\t");
+                                }
+
+                                System.out.println();
+                        }
+
 
                 // Exit
-                case 6:
+                case 7:
                     System.out.println("Program Ended.");
                     sc.close();
                     System.exit(0);
